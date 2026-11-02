@@ -1,0 +1,387 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="theme-color" content="#fff0f5">
+<title>For Pookie ♡</title>
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700;800&family=Pacifico&display=swap');
+:root{--pink:#f5a9c1;--rose:#d9789d;--ink:#80536b;--soft:#fff8fb}
+*{box-sizing:border-box}
+body{margin:0;min-height:100svh;overflow:hidden;font-family:Nunito,sans-serif;color:var(--ink);background:linear-gradient(135deg,#fff2ec,#ffeaf2 48%,#eee8ff);display:grid;place-items:center;padding:14px}
+.bg{position:fixed;inset:0;pointer-events:none;overflow:hidden}
+.glow{position:absolute;width:290px;height:290px;border-radius:50%;filter:blur(58px);opacity:.42;animation:glow 13s ease-in-out infinite alternate}
+.g1{background:#ffb7ca;top:-110px;left:-110px}.g2{background:#d8baff;right:-120px;bottom:-90px;animation-delay:-5s}
+@keyframes glow{to{transform:translate(70px,55px) scale(1.2)}}
+.float{position:absolute;animation:float 5s ease-in-out infinite;color:#e69ab5}.f1{top:13%;left:8%;font-size:25px}.f2{top:20%;right:9%;font-size:19px;animation-delay:1s}.f3{bottom:15%;left:11%;font-size:23px;animation-delay:2s}.f4{bottom:10%;right:10%;font-size:28px;animation-delay:.5s}
+@keyframes float{50%{transform:translateY(-18px) rotate(14deg)}}
+.app{position:relative;width:min(100%,440px);height:min(790px,calc(100svh - 28px));min-height:580px;z-index:1;display:flex;flex-direction:column}
+.top{display:flex;justify-content:space-between;align-items:center;padding:3px 5px 12px;color:#ae8296;font-size:10px;font-weight:800;letter-spacing:1px}
+.track{height:5px;flex:1;max-width:135px;border-radius:10px;background:#f0dce5;overflow:hidden;margin-left:12px}.trackin{height:100%;width:0;background:linear-gradient(90deg,#e99bb5,#c3a0df);border-radius:10px;transition:width .7s}
+.world{position:relative;flex:1;min-height:0;overflow:hidden;border-radius:34px;background:rgba(255,252,251,.66);border:1px solid #fff;box-shadow:0 22px 65px #9c718c2b,inset 0 1px 0 white;backdrop-filter:blur(14px)}
+.scene{position:absolute;inset:0;overflow-y:auto;padding:24px 21px 27px;text-align:center;opacity:0;visibility:hidden;transform:scale(.97);filter:blur(7px);transition:opacity .5s,transform .7s cubic-bezier(.2,.8,.2,1),filter .5s,visibility .5s}
+.scene.active{opacity:1;visibility:visible;transform:scale(1);filter:blur(0);z-index:2}
+.scene.leave{opacity:0;transform:scale(1.07);filter:blur(9px)}
+.scene.enter{animation:sceneEnter .85s cubic-bezier(.18,.8,.2,1) both}
+@keyframes sceneEnter{0%{opacity:0;transform:scale(.88) translateY(28px);filter:blur(10px)}55%{opacity:1;transform:scale(1.025) translateY(-3px);filter:blur(0)}100%{opacity:1;transform:scale(1)}}
+.portal{position:absolute;z-index:5;left:50%;top:50%;width:18px;height:18px;border-radius:50%;background:radial-gradient(circle,#fff 0 12%,#ffd4e3 30%,#ec9fbe 60%,#cba8e9);transform:translate(-50%,-50%) scale(0);pointer-events:none;opacity:0}
+.portal.fire{animation:portal .78s ease-in-out forwards}
+@keyframes portal{0%{opacity:0;transform:translate(-50%,-50%) scale(0)}20%{opacity:1}100%{opacity:0;transform:translate(-50%,-50%) scale(90)}}
+.art{height:145px;display:grid;place-items:center;position:relative;margin:0 auto 10px}
+.ring{position:absolute;width:125px;height:125px;border:1px dashed #eab6ca;border-radius:50%;animation:spin 22s linear infinite}
+.ring:before,.ring:after{content:'✦';position:absolute;color:#e99bb7}.ring:before{top:8px;left:14px}.ring:after{right:12px;bottom:9px}
+@keyframes spin{to{transform:rotate(360deg)}}
+.emoji{font-size:76px;z-index:1;filter:drop-shadow(0 8px 8px #c68ca744);animation:bob 2.8s ease-in-out infinite}
+@keyframes bob{50%{transform:translateY(-9px) rotate(4deg)}}
+h1{font:30px Pacifico,cursive;color:#9a5e7b;margin:8px 0 12px;font-weight:400}
+h2{font-size:17px;margin:8px 0;color:#93627b}
+p{font-size:14px;line-height:1.65;color:#96788a;margin:10px 0 17px}
+button{font:800 13px Nunito,sans-serif;border:0;border-radius:25px;padding:12px 20px;background:linear-gradient(110deg,#f3aec3,#dca1d1);color:#fff;box-shadow:0 7px 16px #d89ab955;cursor:pointer;transition:transform .2s,box-shadow .2s}
+button:active{transform:scale(.96)}button:hover{transform:translateY(-2px);box-shadow:0 10px 20px #d89ab977}
+.secondary{background:#fff3f7;color:#a76d89;border:1px solid #f0d5e0;box-shadow:none}
+.label{font-size:10px;letter-spacing:2px;text-transform:uppercase;color:#bd8ba1;font-weight:800}
+.note{background:#fff7fa;border:1px solid #f5dce6;border-radius:20px;padding:16px;margin:15px 0;box-shadow:inset 0 1px 0 #fff,0 7px 16px #d9b7c51c}
+.note p{font-size:13.5px;margin:0}
+.tapcard{background:linear-gradient(135deg,#fff1f5,#f6f0ff);border:1px solid #f0d6e4;border-radius:20px;padding:15px;margin:10px 0;cursor:pointer;transition:.25s;box-shadow:0 6px 15px #d5b4c51c;text-align:left}
+.tapcard:active{transform:scale(.98)}.taphead{font-weight:800;font-size:13px}.tapbody{font-size:12px;line-height:1.55;color:#927185;display:none;margin-top:9px}.tapcard.open .tapbody{display:block;animation:reveal .35s ease}.tapcard.open .taphead{color:#b56f91}
+@keyframes reveal{from{opacity:0;transform:translateY(6px)}to{opacity:1;transform:none}}
+.quiz{display:flex;gap:8px;justify-content:center;flex-wrap:wrap;margin:14px 0}
+.choice{padding:10px 13px;border-radius:20px;background:#fff5f8;border:1px solid #f1d5e0;color:#98677f;font-size:12px;font-weight:800;cursor:pointer}
+.choice.chosen{background:#f4c5d5;color:#75455f;box-shadow:0 0 0 3px #f8e0e9}
+.feedback{min-height:38px;font-size:12px;color:#a46e89;line-height:1.5;margin:10px 0}
+.promise{display:flex;align-items:flex-start;text-align:left;gap:10px;background:#fff8fa;padding:11px 12px;border-radius:15px;margin:8px 0;border:1px solid #f4e0e7;font-size:12px;line-height:1.5}
+.sign{font-family:Pacifico,cursive;color:#a96f8a;font-size:19px}
+.hint{font-size:10px;color:#b391a1;margin-top:12px}
+.envelope{width:190px;height:125px;margin:22px auto 18px;position:relative;cursor:pointer;filter:drop-shadow(0 12px 13px #c88da855);transition:transform .3s}
+.envelope:hover{transform:translateY(-5px) rotate(-2deg)}.envbase{position:absolute;inset:0;border-radius:12px;background:linear-gradient(145deg,#f7bfd0,#e9a8c5);clip-path:polygon(0 0,100% 0,100% 100%,0 100%)}
+.envflap{position:absolute;inset:0;background:linear-gradient(145deg,#ffdce7,#f2b9d0);clip-path:polygon(0 0,100% 0,50% 63%);transform-origin:top;transition:transform .65s cubic-bezier(.2,.8,.2,1);z-index:2}
+.envletter{position:absolute;left:13px;right:13px;bottom:8px;height:94px;border-radius:8px;background:#fffafc;transition:transform .65s;display:grid;place-items:center;font-size:30px}
+.envelope.open .envflap{transform:rotateX(180deg)}.envelope.open .envletter{transform:translateY(-55px)}
+.bubblewrap{display:grid;grid-template-columns:repeat(4,1fr);gap:11px;max-width:260px;margin:18px auto}
+.bubble{aspect-ratio:1;border-radius:50%;background:radial-gradient(circle at 35% 30%,#fff 0 8%,#ffe7f0 25%,#f4b8cf 80%);box-shadow:inset 2px 3px 7px #fff,0 5px 9px #dba5bc55;cursor:pointer;font-size:20px;display:grid;place-items:center;transition:.25s}
+.bubble.popped{transform:scale(.72);opacity:.45;background:#ead9ee;box-shadow:inset 0 2px 5px #c7b1cb}.bubble:active{transform:scale(.85)}
+.counter{font-size:12px;color:#a57991;margin:8px}
+.burst{position:fixed;z-index:9;pointer-events:none;font-size:20px;animation:burst 1.7s ease-out forwards}
+@keyframes burst{0%{opacity:0;transform:translate(0,0) scale(.4)}15%{opacity:1}100%{opacity:0;transform:translate(var(--x),var(--y)) rotate(160deg) scale(1.2)}}
+@media(max-height:650px){.app{height:calc(100svh - 20px);min-height:0}.scene{padding:15px}.art{height:105px}.ring{width:95px;height:95px}.emoji{font-size:58px}h1{font-size:25px}}
+</style>
+
+<style>
+:root{--gold:#d8b878;--cream:#fffaf5;--ink:#765067}
+body{background:radial-gradient(ellipse at 15% 8%,#fff9f0 0%,transparent 35%),radial-gradient(ellipse at 88% 90%,#e8d8ff 0%,transparent 38%),linear-gradient(135deg,#fff0f4,#f9e8f1 45%,#eee8ff)}
+.bg:after{content:"";position:absolute;inset:0;background-image:radial-gradient(#fff 1px,transparent 1.5px),radial-gradient(#d6ad75 1px,transparent 1.5px);background-size:57px 57px,91px 91px;background-position:0 0,22px 35px;opacity:.34;animation:starDrift 28s linear infinite}
+@keyframes starDrift{to{background-position:57px 57px,-69px 126px}}
+.app{position:relative;isolation:isolate;border:1px solid rgba(255,255,255,.82)!important;box-shadow:0 30px 90px rgba(128,73,111,.19),0 8px 25px rgba(255,255,255,.85) inset!important}
+.app:before{content:"";position:absolute;inset:7px;border:1px solid rgba(210,174,119,.38);border-radius:inherit;pointer-events:none;z-index:5}
+.top{letter-spacing:.14em;text-transform:uppercase;font-size:10px!important;color:#b18491!important}
+.track{height:5px!important;background:rgba(214,184,120,.18)!important;border-radius:99px;overflow:hidden}
+.trackin{background:linear-gradient(90deg,#d99bb0,#d9bd83,#c8a8e7)!important;box-shadow:0 0 14px #e7b6c8}
+.scene{transition:opacity .7s ease,transform .85s cubic-bezier(.2,.8,.2,1),filter .8s ease!important}
+.scene.active{animation:sceneBloom 1.1s cubic-bezier(.16,1,.3,1) both}
+@keyframes sceneBloom{0%{opacity:0;transform:translateY(24px) scale(.94);filter:blur(9px)}100%{opacity:1;transform:translateY(0) scale(1);filter:blur(0)}}
+.art{filter:drop-shadow(0 12px 20px rgba(182,116,151,.17))}
+.ring{border-color:rgba(213,177,119,.55)!important;box-shadow:0 0 0 8px rgba(255,255,255,.22),0 0 40px rgba(224,171,197,.28)!important}
+.note,.tapcard,.quiz,.sign{border:1px solid rgba(255,255,255,.88)!important;box-shadow:0 18px 45px rgba(128,73,111,.10),0 1px 0 rgba(255,255,255,.95) inset!important;backdrop-filter:blur(18px)}
+.tapcard{transition:transform .35s ease,box-shadow .35s ease!important}
+.tapcard:active,.bubble:active{transform:scale(.96)}
+.tapcard.open{box-shadow:0 18px 45px rgba(211,158,184,.25)!important}
+button,.choice{transition:transform .25s ease,box-shadow .25s ease,background .25s ease!important}
+button:hover,.choice:hover{transform:translateY(-3px);box-shadow:0 12px 24px rgba(185,123,155,.2)}
+.bubble{box-shadow:0 8px 22px rgba(192,137,165,.17),inset 0 2px 4px rgba(255,255,255,.95)!important;border:1px solid rgba(255,255,255,.9)!important;animation:bubbleFloat 3.5s ease-in-out infinite}
+.bubble:nth-child(2n){animation-delay:-1.2s}.bubble:nth-child(3n){animation-delay:-2.1s}
+@keyframes bubbleFloat{50%{translate:0 -9px;rotate:5deg}}
+.envelope{filter:drop-shadow(0 20px 25px rgba(154,94,130,.2))}
+.label{letter-spacing:.16em!important}
+.premium-frame{position:fixed;inset:13px;border:1px solid rgba(204,167,119,.28);border-radius:24px;pointer-events:none;z-index:10}
+.premium-frame:before,.premium-frame:after{content:"✧";position:absolute;color:#c5a16e;font-size:19px;text-shadow:0 0 15px #fff}
+.premium-frame:before{top:9px;left:12px}.premium-frame:after{right:12px;bottom:9px}
+.ambient{position:fixed;inset:0;pointer-events:none;overflow:hidden;z-index:0}
+.ambient i{position:absolute;width:5px;height:5px;border-radius:50%;background:#fff;box-shadow:0 0 12px 3px rgba(255,255,255,.8);animation:twinkle 4s ease-in-out infinite}
+@keyframes twinkle{0%,100%{opacity:.15;transform:scale(.6)}50%{opacity:1;transform:scale(1.5)}}
+.petal{position:fixed;top:-30px;pointer-events:none;z-index:2;animation:petalFall linear forwards;opacity:.65}
+@keyframes petalFall{to{transform:translate3d(var(--drift),110vh,0) rotate(540deg);opacity:0}}
+@media(max-width:520px){.premium-frame{inset:7px;border-radius:18px}.app:before{inset:5px}}
+</style>
+
+
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600;700&family=DM+Sans:wght@400;500;600;700;800&display=swap');
+:root{--ink:#65445d;--gold:#c6a46b;--gold2:#f4dfad}
+body{font-family:'DM Sans',Nunito,sans-serif;background:#130d20;color:#fff}
+.bg{background:radial-gradient(ellipse at 12% 15%,#57364f 0%,transparent 40%),radial-gradient(ellipse at 85% 80%,#29204f 0%,transparent 45%),linear-gradient(135deg,#130d20,#26162c 50%,#17142c)}
+.bg:after{content:"";position:absolute;inset:0;opacity:.22;background-image:radial-gradient(#fff 1px,transparent 1.5px),radial-gradient(#e7c98b 1px,transparent 1.5px);background-size:49px 49px,83px 83px;background-position:0 0,22px 31px;animation:luxDust 36s linear infinite}
+@keyframes luxDust{to{background-position:98px 98px,-61px 114px}}
+.app{width:min(100%,480px);filter:drop-shadow(0 30px 70px #080510aa)}
+.top{color:#e3c991!important;font-size:9px!important;letter-spacing:.22em!important}
+.world{background:linear-gradient(145deg,rgba(255,250,247,.96),rgba(249,237,246,.93) 58%,rgba(240,232,255,.94));border:1px solid #f7e6c3;box-shadow:0 0 0 1px #c6a46b55,0 0 45px #e9c98a22,0 30px 90px #07040d99,inset 0 1px #fff}
+.world:before{content:"";position:absolute;inset:9px;border:1px solid #c9a66d55;border-radius:27px;pointer-events:none;z-index:4}
+h1{font-family:'Cormorant Garamond',Georgia,serif;font-size:39px;line-height:1.02;letter-spacing:.01em;color:#8c5c78;text-shadow:0 2px #fff}
+h2{color:#90627b}
+p{color:#866d80}
+.label{color:#b08b57;letter-spacing:.25em}
+.note,.tapcard,.quiz,.sign{box-shadow:0 15px 35px #77516c16,inset 0 1px #fff!important}
+button{background:linear-gradient(115deg,#c8a46c,#f0d9a4 45%,#bd8cba);color:#fffdf8;border:1px solid #fff4d5;box-shadow:0 8px 24px #9d7b9c44,0 1px 0 #fff9 inset;letter-spacing:.02em}
+.secondary,.choice{background:linear-gradient(135deg,#fff,#f7edf5);border:1px solid #e5d1ad;color:#8a617c}
+.track{background:#e7d9e5}.trackin{background:linear-gradient(90deg,#b990c2,#e5c78e,#d99bb7);box-shadow:0 0 12px #e5c78e}
+.art .ring{border:1px solid #d9bd86;box-shadow:0 0 0 7px #d9bd8617,0 0 28px #d9bd8633}
+.emoji{filter:drop-shadow(0 12px 13px #b78baf66)}
+.envelope{filter:drop-shadow(0 17px 23px #8f638b66)}
+.bubble{border:1px solid #fff!important;box-shadow:inset 0 2px 8px #fff,0 9px 25px #b88ba755}
+.premium-frame{border-color:#d5b77966;box-shadow:inset 0 0 50px #d4b77b0c}
+.premium-frame:before,.premium-frame:after{color:#e4c78c}
+.memory-grid{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:9px;max-width:310px;margin:17px auto}
+.memory-tile{aspect-ratio:1;border-radius:17px;border:1px solid #ead8b8;background:linear-gradient(145deg,#fff,#f5eaf4);box-shadow:0 7px 18px #8b66831a,inset 0 1px #fff;color:#aa7a9c;font-size:25px;display:grid;place-items:center;cursor:pointer;transition:transform .35s,background .35s,box-shadow .35s;transform-style:preserve-3d}
+.memory-tile:hover{transform:translateY(-3px) rotate(-2deg);box-shadow:0 12px 23px #9d789b33}
+.memory-tile.revealed{background:linear-gradient(145deg,#fff7e8,#f7e5f1);border-color:#d4b77e;transform:rotateY(180deg);color:#92617c}
+.memory-tile.matched{background:linear-gradient(145deg,#f9eddf,#f0e7f6);border-color:#c9ad77;box-shadow:0 0 0 2px #e5d0a244;cursor:default;opacity:.72}
+.memory-tile:disabled{cursor:default}
+.ambient i{background:#ffe8b8;box-shadow:0 0 15px 3px #e9ca8c88}
+@media(max-width:380px){.memory-grid{gap:6px}.memory-tile{border-radius:13px;font-size:21px}h1{font-size:34px}}
+@media(prefers-reduced-motion:reduce){*,*:before,*:after{animation-duration:.01ms!important;animation-iteration-count:1!important;scroll-behavior:auto!important;transition-duration:.01ms!important}}
+</style>
+
+<style>
+/* Signature transition: a dimensional pink wordmark that blooms between scenes */
+.portal{display:none!important}
+.brand-transition{position:absolute;inset:0;z-index:8;display:grid;place-content:center;justify-items:center;pointer-events:none;opacity:0;visibility:hidden;perspective:900px;overflow:hidden}
+.brand-transition:before{content:"";position:absolute;width:30px;height:30px;border-radius:50%;background:radial-gradient(circle,#fff 0 2%,#ffd6eb 18%,#f58fc5 43%,#d85aa6 65%,transparent 72%);filter:blur(1px);opacity:0}
+.brand-transition.play{visibility:visible;animation:brandCurtain 1.16s cubic-bezier(.18,.78,.18,1) both}
+.brand-transition.play:before{animation:brandFlash 1.05s ease-out both}
+.brand-aura{position:absolute;width:min(78vw,390px);aspect-ratio:1;border-radius:50%;background:radial-gradient(circle,rgba(255,222,241,.97) 0%,rgba(255,151,205,.42) 28%,rgba(218,91,163,.18) 49%,transparent 70%);filter:blur(9px);transform:scale(.12);opacity:0}
+.brand-transition.play .brand-aura{animation:auraBloom 1.12s cubic-bezier(.16,1,.3,1) both}
+.brand-word{position:relative;font-family:'Cormorant Garamond',Georgia,serif;font-weight:700;font-size:clamp(48px,13vw,78px);line-height:.92;letter-spacing:.055em;color:#ffb2d8;background:linear-gradient(180deg,#fff9ff 0%,#ffd9ed 16%,#ff9dcc 38%,#ec69ad 58%,#bd3f91 78%,#ffe4f3 100%);-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent;text-shadow:0 2px 0 rgba(255,255,255,.42),0 7px 0 rgba(152,49,112,.15),0 14px 28px rgba(139,36,103,.3);filter:drop-shadow(0 0 9px rgba(255,167,214,.95)) drop-shadow(0 0 28px rgba(229,89,166,.72));opacity:0;transform:translateY(30px) rotateX(-42deg) scale(.55);transform-origin:center}
+.brand-transition.play .brand-word{animation:wordmarkRise 1.12s cubic-bezier(.15,1.25,.25,1) both}
+.brand-sub{position:relative;margin-top:13px;font-family:'DM Sans',sans-serif;font-weight:800;font-size:clamp(10px,2.8vw,13px);letter-spacing:.48em;padding-left:.48em;color:#fff7fc;text-shadow:0 0 7px #fff,0 0 16px #f48bc5,0 3px 16px #9d3d80;opacity:0;transform:translateY(12px) scale(.8)}
+.brand-transition.play .brand-sub{animation:subRise .8s .19s ease-out both}
+.brand-spark{position:relative;margin-top:13px;color:#ffe9f5;font-size:20px;letter-spacing:.42em;text-shadow:0 0 9px #fff,0 0 20px #f47fbd;opacity:0}
+.brand-transition.play .brand-spark{animation:sparkTwinkle .8s .32s ease-out both}
+@keyframes brandCurtain{0%{opacity:0}13%,76%{opacity:1}100%{opacity:0}}
+@keyframes brandFlash{0%{opacity:0;transform:scale(.1)}18%{opacity:1;transform:scale(13)}100%{opacity:0;transform:scale(38)}}
+@keyframes auraBloom{0%{opacity:0;transform:scale(.12)}24%{opacity:1;transform:scale(.92)}65%{opacity:.85;transform:scale(1.14)}100%{opacity:0;transform:scale(1.65)}}
+@keyframes wordmarkRise{0%{opacity:0;transform:translateY(30px) rotateX(-42deg) scale(.55);filter:blur(9px) drop-shadow(0 0 0 transparent)}22%{opacity:1;filter:blur(0) drop-shadow(0 0 12px #ffb5db) drop-shadow(0 0 30px #e45ca8)}48%{transform:translateY(-5px) rotateX(8deg) scale(1.1)}68%{transform:translateY(0) rotateX(0) scale(1)}100%{opacity:0;transform:translateY(-17px) scale(1.16);filter:blur(3px) drop-shadow(0 0 35px #ff9ed0)}}
+@keyframes subRise{0%{opacity:0;transform:translateY(12px) scale(.8);letter-spacing:.8em}35%{opacity:1}100%{opacity:0;transform:translateY(-8px) scale(1.06);letter-spacing:.48em}}
+@keyframes sparkTwinkle{0%{opacity:0;transform:scale(.3) rotate(-18deg)}35%{opacity:1;transform:scale(1.2) rotate(5deg)}100%{opacity:0;transform:scale(1.6) rotate(16deg)}}
+@media(prefers-reduced-motion:reduce){.brand-transition.play,.brand-transition.play:before,.brand-transition.play .brand-aura,.brand-transition.play .brand-word,.brand-transition.play .brand-sub,.brand-transition.play .brand-spark{animation-duration:.01ms!important}}
+</style>
+
+
+<style>
+/* Smooth envelope opening and tactile mini-games */
+.envelope{perspective:900px;transform-style:preserve-3d;transition:transform .55s cubic-bezier(.2,.8,.2,1),filter .55s;will-change:transform}
+.envelope:active{transform:translateY(2px) scale(.985)}
+.envbase{z-index:1;overflow:hidden}
+.envletter{z-index:2;transform:translateY(0) scale(.96);opacity:.98;box-shadow:0 2px 12px rgba(150,92,122,.10);will-change:transform}
+.envflap{z-index:3;transform-origin:50% 0%;backface-visibility:hidden;transform-style:preserve-3d;transition:transform 1.05s cubic-bezier(.2,.78,.18,1),filter .8s}
+.envelope.open{transform:translateY(-4px) scale(1.035);filter:drop-shadow(0 18px 18px #c88da866)}
+.envelope.open .envflap{transform:rotateX(-178deg);filter:brightness(1.04)}
+.envelope.open .envletter{transform:translateY(-76px) scale(1);transition-delay:.22s}
+.envelope:after{content:'✦';position:absolute;z-index:4;left:50%;top:53%;color:#fff;font-size:18px;opacity:0;transform:translate(-50%,-50%) scale(.3);pointer-events:none}
+.envelope.open:after{animation:envSpark .8s .52s ease-out both}
+@keyframes envSpark{0%{opacity:0;transform:translate(-50%,-50%) scale(.3) rotate(0)}35%{opacity:1;transform:translate(-50%,-90%) scale(1.5) rotate(90deg)}100%{opacity:0;transform:translate(-50%,-150%) scale(.5) rotate(180deg)}}
+#startbtn{animation:startAppear .55s ease both}
+@keyframes startAppear{from{opacity:0;transform:translateY(12px) scale(.94)}to{opacity:1;transform:translateY(0) scale(1)}}
+.bubble{will-change:transform,opacity;transition:transform .42s cubic-bezier(.18,.9,.25,1),opacity .35s,box-shadow .35s}
+.bubble.popped{transform:scale(.72) rotate(12deg);animation:popBubble .42s cubic-bezier(.16,1.4,.3,1) both}
+@keyframes popBubble{0%{transform:scale(1)}45%{transform:scale(1.22)}100%{transform:scale(.72) rotate(12deg)}}
+.memory-tile{will-change:transform;transition:transform .42s cubic-bezier(.2,.8,.2,1),background .3s,box-shadow .3s!important;backface-visibility:hidden;-webkit-tap-highlight-color:transparent}
+.memory-tile.revealed{animation:tileFlip .42s cubic-bezier(.2,.8,.2,1) both}
+.memory-tile.matched{animation:matchPop .42s cubic-bezier(.16,1.35,.3,1) both}
+@keyframes tileFlip{0%{transform:scale(.94)}45%{transform:scaleX(.88) scaleY(1.03)}100%{transform:scale(1)}}
+@keyframes matchPop{0%{transform:scale(.96)}45%{transform:scale(1.09)}75%{transform:scale(.99)}100%{transform:scale(1)}}
+.locked-next{opacity:.42;filter:saturate(.55);cursor:not-allowed;box-shadow:none}
+.locked-next:disabled{transform:none!important}
+.tapcard.open{animation:promiseOpen .38s cubic-bezier(.2,.8,.2,1) both}
+@keyframes promiseOpen{0%{transform:scale(.98)}55%{transform:scale(1.015)}100%{transform:scale(1)}}
+.choice{transition:transform .25s,background .25s,box-shadow .25s}
+.choice.chosen{transform:translateY(-3px) scale(1.035)}
+@media(prefers-reduced-motion:reduce){.envelope,.envflap,.envletter,.bubble,.memory-tile{transition-duration:.01ms!important;animation-duration:.01ms!important}}
+</style>
+<style>
+/* Pair-game stability polish: avoid backface flicker on mobile browsers */
+.memory-tile{position:relative;min-width:0;min-height:0;transform:none;transform-style:flat;backface-visibility:visible;-webkit-backface-visibility:visible;perspective:none;user-select:none;-webkit-user-select:none;touch-action:manipulation;outline-offset:3px}
+.memory-tile:hover{transform:translateY(-2px)}
+.memory-tile.revealed,.memory-tile.matched{transform:none;backface-visibility:visible;-webkit-backface-visibility:visible}
+.memory-tile.revealed{animation:tileFlip .34s cubic-bezier(.2,.75,.25,1) both}
+.memory-tile.matched{animation:matchPop .38s cubic-bezier(.2,.8,.2,1) both}
+.memory-tile:focus-visible{outline:2px solid #bd8cba}
+.memory-tile:disabled{opacity:1}
+@media(prefers-reduced-motion:reduce){.memory-tile.revealed,.memory-tile.matched{animation:none!important}}
+</style>
+
+</head>
+<body>
+<div class="bg"><div class="glow g1"></div><div class="glow g2"></div><span class="float f1">♡</span><span class="float f2">✦</span><span class="float f3">♥</span><span class="float f4">✧</span></div>
+<main class="app">
+ <div class="top"><span>♡ A LITTLE NOTE FOR POOKIE</span><div class="track"><div class="trackin" id="trackin"></div></div></div>
+ <div class="world" id="world"><div class="portal" id="portal"></div><div class="brand-transition" id="brandTransition" aria-hidden="true"><div class="brand-aura"></div><div class="brand-word">POOKIE</div><div class="brand-sub">DUFFER ASLI ✦</div><div class="brand-spark">✧　♡　✧</div></div>
+  <section class="scene active">
+   <div class="art"><div class="ring"></div><div class="emoji">🐰</div></div>
+   <div class="label">made by your duffer</div><h1>Hiiii Pookieee! 💗</h1>
+   <p>Okay so… I made a tiny website for you. Don't judge my coding skills pls 😭<br>Just tap through it, I have something to say.</p>
+   <div class="envelope" id="envelope" onclick="openEnvelope()"><div class="envbase"></div><div class="envletter">💌</div><div class="envflap"></div></div>
+   <div class="hint" id="envhint">Tap the envelope to open your note 👆</div>
+   <button id="startbtn" style="display:none" onclick="go(1)">Okay, let's gooo ♡</button>
+  </section>
+  <section class="scene">
+   <div class="art"><div class="ring"></div><div class="emoji">🥺</div></div>
+   <h1>First… I'm sorry.</h1>
+   <div class="note"><p>During our fight on Insta, I said <b>“you don't have the word called feelings”</b> and I know that hurt you a lot.</p></div>
+   <p>I shouldn't have said that, Pookie. I was angry, but that's not an excuse. I know you have feelings and I shouldn't have made you feel like they don't matter.</p>
+   <p>And yes, your duffer knows he messed up. 😭</p>
+   <button onclick="go(2)">I have something for you →</button>
+  </section>
+  <section class="scene">
+   <div class="art" style="height:110px"><div class="ring" style="width:95px;height:95px"></div><div class="emoji">🫧</div></div>
+   <h1>Pop these little bubbles!</h1>
+   <p>One bubble, one thing I really mean. Pop all 8 to unlock the next bit. ♡</p>
+   <div class="bubblewrap" id="bubblewrap"></div><div class="counter" id="bubblecount">0 / 8 popped</div>
+   <button id="bubblebtn" style="opacity:.45;pointer-events:none" onclick="go(3)">You did ittt! Next →</button>
+  </section>
+
+  <section class="scene">
+   <div class="art" style="height:105px"><div class="ring" style="width:92px;height:92px"></div><div class="emoji">🎀</div></div>
+   <div class="label">the tiny royal arcade</div><h1>A little matching game!</h1>
+   <p>Match all 4 pairs of cute icons. A tiny game break before the promises. 🥹</p>
+   <div class="memory-grid" id="memorygrid"></div>
+   <div class="counter" id="memorycount">0 / 4 pairs found</div>
+   <button id="memoryNext" style="opacity:.4;pointer-events:none" onclick="go(4)">You unlocked the promises ✨</button>
+   <div class="hint">No timer. Just have fun, Pookie ♡</div>
+  </section>
+  <section class="scene">
+   <div class="art" style="height:105px"><div class="ring" style="width:92px;height:92px"></div><div class="emoji">💞</div></div>
+   <h1>Promise timeee!</h1><p>Tap each heart to open a promise. Yes, all of them are important. 🥹</p>
+   <div class="tapcard" onclick="reveal(this)"><div class="taphead">💗 Promise 1</div><div class="tapbody">I'll never be jealous and fight with you again. I'll trust you and talk calmly instead of turning things into a fight.</div></div>
+   <div class="tapcard" onclick="reveal(this)"><div class="taphead">🌷 Promise 2</div><div class="tapbody">I'll listen to you properly and never make you feel like your feelings don't matter.</div></div>
+   <div class="tapcard" onclick="reveal(this)"><div class="taphead">🫶 Promise 3</div><div class="tapbody">I'll think before saying something when I'm angry. No more saying things just to win an argument.</div></div>
+   <div class="tapcard" onclick="reveal(this)"><div class="taphead">🐻 Promise 4</div><div class="tapbody">I'll respect your space and won't force you to reply or talk before you're ready.</div></div>
+   <button id="promiseNext" class="locked-next" disabled onclick="go(5)">Open all promises to continue →</button>
+  </section>
+  <section class="scene">
+   <div class="art" style="height:105px"><div class="ring" style="width:92px;height:92px"></div><div class="emoji">🐣</div></div>
+   <h1>Duffer has a question…</h1><p>What does this duffer need to do more?</p>
+   <div class="quiz">
+    <div class="choice" onclick="pick(this,'listen')">👂 Listen properly</div>
+    <div class="choice" onclick="pick(this,'think')">🧠 Think before typing</div>
+    <div class="choice" onclick="pick(this,'both')">💗 Both, obviously!</div>
+   </div>
+   <div class="feedback" id="feedback">Choose one, Pookie. This is a very serious duffer survey. 😭</div>
+   <button id="quizNext" class="locked-next" disabled onclick="go(6)">Choose an answer to continue →</button>
+  </section>
+  <section class="scene">
+   <div class="art"><div class="ring"></div><div class="emoji">💌</div></div>
+   <h1>One last thing, Pookie.</h1>
+   <div class="note">
+    <p>I'm really sorry for what I said. You didn't deserve to hear that from me. I care about you, and I don't want you to feel that I don't understand or value your feelings.</p><br>
+    <p>I know you said you'll limit talking from now on. I understand, and I'll give you the space you want. I'm not asking you to forgive me right now or act like nothing happened.</p><br>
+    <p>I just wanted you to know that I mean this sorry. I'll try to show you I've understood, not just say it.</p>
+   </div>
+   <p class="sign">Sorry, Pookie. — Your duffer ♡</p>
+   <button onclick="go(7);confetti()">Open the last little note ✨</button>
+  </section>
+  <section class="scene">
+   <div class="art"><div class="ring"></div><div class="emoji">🌷</div></div>
+   <div class="label">no pressure, okay?</div><h1>Take your timeee ♡</h1>
+   <p>You don't have to reply right now. If you feel like talking later, I'll be happy to listen. Till then, I'll respect your space.</p>
+   <div class="note"><p>Also, this duffer is trying to upgrade his brain so he doesn't repeat the same mistake. Update in progress… 2% 😭💗</p></div>
+   <button onclick="restart()">Start again ↺</button><div class="hint">made with a little effort and a lot of sorrys ♡</div>
+  </section>
+ </div>
+</main>
+<script>
+let current=0,busy=false;const scenes=[...document.querySelectorAll('.scene')],track=document.getElementById('trackin'),portal=document.getElementById('portal');
+function go(n){if(busy||n<0||n>=scenes.length||n===current)return;
+ if(current===2&&document.querySelectorAll('.bubble.popped').length<8){document.getElementById('bubblecount').textContent='Pop all 8 bubbles first! ♡';return;}
+ if(current===3&&document.querySelectorAll('.memory-tile.matched').length<8){document.getElementById('memorycount').textContent='Find all 4 pairs first! 🎀';return;}
+ if(current===4&&document.querySelectorAll('.tapcard.open').length<4){const b=document.getElementById('promiseNext');b.textContent='Open all 4 promises first ♡';return;}
+ if(current===5&&!document.querySelector('.choice.chosen')){document.getElementById('feedback').textContent='Choose your answer first, Pookie. 💗';return;}
+ busy=true;const old=scenes[current],next=scenes[n];const brand=document.getElementById('brandTransition');brand.classList.remove('play');void brand.offsetWidth;brand.classList.add('play');old.classList.add('leave');setTimeout(()=>{old.classList.remove('active','leave');next.classList.add('active','enter');current=n;track.style.width=(n/(scenes.length-1)*100)+'%';setTimeout(()=>{next.classList.remove('enter');busy=false},850)},270);window.setTimeout(()=>brand.classList.remove('play'),1250)}
+function restart(){scenes.forEach((s,i)=>s.classList.toggle('active',i===0));scenes.forEach(s=>s.classList.remove('leave','enter'));current=0;track.style.width='0%';document.querySelectorAll('.tapcard').forEach(x=>x.classList.remove('open'));const pn=document.getElementById('promiseNext');pn.disabled=true;pn.classList.add('locked-next');pn.textContent='Open all 4 promises to continue →';const qn=document.getElementById('quizNext');qn.disabled=true;qn.classList.add('locked-next');qn.textContent='Choose an answer to continue →';document.querySelectorAll('.choice').forEach(x=>x.classList.remove('chosen'));}
+function openEnvelope(){const e=document.getElementById('envelope');if(e.classList.contains('opening')||e.classList.contains('open'))return;e.classList.add('opening');document.getElementById('envhint').textContent='Opening your little note… 💗';setTimeout(()=>{e.classList.add('open');e.classList.remove('opening');document.getElementById('envhint').textContent='A little note, just for you 💗';confetti(16);},180);setTimeout(()=>{const btn=document.getElementById('startbtn');btn.style.display='inline-block';},1120)}
+const bubbleTexts=['♡','💗','🌷','🧸','✨','💕','🐰','🫶'];let popped=0;const wrap=document.getElementById('bubblewrap');bubbleTexts.forEach((t,i)=>{let b=document.createElement('div');b.className='bubble';b.textContent='♡';b.onclick=()=>{if(b.classList.contains('popped'))return;b.classList.add('popped');b.textContent=t;popped++;document.getElementById('bubblecount').textContent=popped+' / 8 popped';if(popped===8){document.getElementById('bubblebtn').style.opacity='1';document.getElementById('bubblebtn').style.pointerEvents='auto';document.getElementById('bubblecount').textContent='All popped! You unlocked the promises 💗';confetti(18)}};wrap.appendChild(b)});
+function reveal(el){el.classList.toggle('open');const total=document.querySelectorAll('.tapcard.open').length;const btn=document.getElementById('promiseNext');if(total===4){btn.disabled=false;btn.classList.remove('locked-next');btn.style.opacity='1';btn.textContent='All promises opened! Nexttt →'}else{btn.disabled=true;btn.classList.add('locked-next');btn.textContent='Open all 4 promises to continue →'}}
+function pick(el,c){document.querySelectorAll('.choice').forEach(x=>x.classList.remove('chosen'));el.classList.add('chosen');let m={listen:"Noteddd. Duffer will keep his ears open. 👂💗",think:"Yes. Thumbs need a tiny thinking break before sending messages. 😭",both:"Correct answer. Pookie gets full marks. Duffer gets homework. 🥲"};document.getElementById('feedback').textContent=m[c];const next=document.getElementById('quizNext');next.disabled=false;next.classList.remove('locked-next');next.style.opacity='1';next.textContent='Read my last note →'}
+function confetti(count=28){let icons=['♡','♥','✦','🌸','✨','💗'];for(let i=0;i<count;i++){let e=document.createElement('span');e.className='burst';e.textContent=icons[Math.floor(Math.random()*icons.length)];e.style.left=(42+Math.random()*16)+'vw';e.style.top=(40+Math.random()*15)+'vh';e.style.setProperty('--x',(Math.random()*500-250)+'px');e.style.setProperty('--y',(-100-Math.random()*380)+'px');e.style.animationDelay=(Math.random()*.4)+'s';document.body.appendChild(e);setTimeout(()=>e.remove(),2200)}}
+</script>
+
+<script>
+(()=> {
+ const frame=document.createElement('div');frame.className='premium-frame';document.body.appendChild(frame);
+ const ambient=document.createElement('div');ambient.className='ambient';document.body.appendChild(ambient);
+ for(let i=0;i<34;i++){const s=document.createElement('i');s.style.left=(Math.random()*100)+'%';s.style.top=(Math.random()*100)+'%';s.style.animationDelay=(Math.random()*4)+'s';s.style.animationDuration=(3+Math.random()*4)+'s';ambient.appendChild(s)}
+ const petals=['✿','❀','♡','✧'];
+ function makePetal(){const p=document.createElement('span');p.className='petal';p.textContent=petals[Math.floor(Math.random()*petals.length)];p.style.left=Math.random()*100+'vw';p.style.color=['#e7a8bd','#d7b879','#c8a9dc'][Math.floor(Math.random()*3)];p.style.fontSize=(10+Math.random()*13)+'px';p.style.setProperty('--drift',(Math.random()*180-90)+'px');p.style.animationDuration=(9+Math.random()*9)+'s';document.body.appendChild(p);setTimeout(()=>p.remove(),19000)}
+ for(let i=0;i<9;i++)setTimeout(makePetal,i*550);
+ setInterval(makePetal,1700);
+})();
+</script>
+
+
+<script>
+(()=> {
+ const icons=['🌷','🐰','💗','🧸','🌷','🐰','💗','🧸'];
+ // Fisher-Yates shuffle avoids the uneven ordering of random sort().
+ for(let i=icons.length-1;i>0;i--){const j=Math.floor(Math.random()*(i+1));[icons[i],icons[j]]=[icons[j],icons[i]];}
+ const grid=document.getElementById('memorygrid');
+ if(!grid)return;
+ let first=null,lock=false,pairs=0,turn=0;
+ const counter=document.getElementById('memorycount');
+ const next=document.getElementById('memoryNext');
+ const deck=icons.map((value,index)=>({value,index}));
+ deck.forEach((item)=>{
+  const tile=document.createElement('button');
+  tile.className='memory-tile';
+  tile.type='button';
+  tile.textContent='✧';
+  tile.setAttribute('aria-label','Hidden matching tile');
+  tile.setAttribute('aria-pressed','false');
+  tile.addEventListener('click',()=>{
+   if(lock||tile.disabled||tile.classList.contains('revealed')||tile.classList.contains('matched'))return;
+   tile.classList.add('revealed');
+   tile.textContent=item.value;
+   tile.setAttribute('aria-label','Revealed '+item.value);
+   tile.setAttribute('aria-pressed','true');
+   if(!first){first={tile,item};return;}
+   const previous=first;
+   first=null;
+   lock=true;
+   turn++;
+   if(previous.item.value===item.value){
+    previous.tile.classList.add('matched');
+    tile.classList.add('matched');
+    previous.tile.disabled=true;
+    tile.disabled=true;
+    previous.tile.setAttribute('aria-label','Matched '+item.value);
+    tile.setAttribute('aria-label','Matched '+item.value);
+    pairs++;
+    counter.textContent=pairs+' / 4 pairs found';
+    // Keep a short input lock while the match animation finishes.
+    window.setTimeout(()=>{lock=false;},390);
+    if(pairs===4){
+     counter.textContent='Perfect match! You found every pair. 🎀';
+     next.style.opacity='1';
+     next.style.pointerEvents='auto';
+     next.setAttribute('aria-disabled','false');
+     if(typeof confetti==='function')confetti(28);
+    }
+   }else{
+    counter.textContent='Not quite — try another pair! ♡';
+    window.setTimeout(()=>{
+     previous.tile.classList.remove('revealed');
+     tile.classList.remove('revealed');
+     previous.tile.textContent='✧';
+     tile.textContent='✧';
+     previous.tile.setAttribute('aria-label','Hidden matching tile');
+     tile.setAttribute('aria-label','Hidden matching tile');
+     previous.tile.setAttribute('aria-pressed','false');
+     tile.setAttribute('aria-pressed','false');
+     counter.textContent=pairs+' / 4 pairs found';
+     lock=false;
+    },850);
+   }
+  });
+  grid.appendChild(tile);
+ });
+})();
+</script>
+</body></html>
